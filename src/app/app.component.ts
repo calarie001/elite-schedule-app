@@ -1,9 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {my-teams}
 
-import {MyTeamsPage} from '../pages/pages'
+import {MyTeamsPage, TournamentsPage} from '../pages/pages'
 
 
 @Component({
@@ -19,11 +18,6 @@ export class MyApp {
   constructor(public platform: Platform) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Page One', component: Page1 },
-      { title: 'Page Two', component: Page2 }
-    ];
 
   }
 
@@ -36,9 +30,13 @@ export class MyApp {
     });
   }
 
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+  goHome(){
+    this.nav.push(MyTeamsPage);
   }
+
+  goToTournaments(){
+    this.nav.push(TournamentsPage);
+  }
+
+
 }
