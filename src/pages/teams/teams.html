@@ -15,7 +15,6 @@
 
 <ion-content padding>
   <ion-list>
-    <button HCElite ion-item (click)="itemTapped()">HC Elite</button>
-    <button TeamTakeover ion-item (click)="itemTapped()">Team Takeover</button>
+    <button ion-item *ngFor="let team of teams; let i = index; trackBy: trackByFn" (click)="itemTapped($event, team)">{{team.name}}</button>
   </ion-list>
 </ion-content>
